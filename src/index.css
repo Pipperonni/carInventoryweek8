@@ -5,6 +5,57 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./mback.jpg');
+  background-size:     cover;                
+  background-repeat:   no-repeat;
+  color: rgb(229, 18, 53);  
+}
+
+
+.navbar{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 5rem;
+  background-color: #f3f3f3;
+}
+
+.navHeader{
+  background-image: url('./logo.jpg');
+  width: 227px;
+  height: 40px;
+}
+
+.navTitle{
+  font-size: 2rem;
+  list-style-type: none;
+}
+
+.navText{
+  text-decoration: none;
+  color: rgb(245, 5, 5);
+}
+
+
+.carInventory{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.carTitle{
+  margin: 10px;
+}
+
+.counterTitle{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.btn{
+  margin-left: 1rem;
 }
 
 code {
