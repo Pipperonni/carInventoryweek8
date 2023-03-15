@@ -20,7 +20,7 @@ function App() {
               <h2 className="navHeader3"></h2>
               <h2 className="navHeader4"></h2>
             </div>
-            <p className="lucas">Lucas's Car Collection</p>
+            <p className="lucas">Lucas's Garage Sale</p>
             <div className="navTitleBox">
             <li className="navTitle">
             <Link to="/" className="navText">Home</Link>
