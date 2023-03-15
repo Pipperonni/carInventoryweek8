@@ -1,43 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Cardetail from '../components/Cardetail';
 
 
+export default function Inventory(){
+    const [cars, setCars] = useState([])
 
-export default function Inventory() {
-    const [counters, setCounters] = useState([
-        {
-            title: 'GT',
-            initialCount: 7,
-            image: 'images/car/mgt.jpg'
-        },
-        {
-            title: '765LT SPIDER',
-            initialCount: 4,
-            image: 'images/car/m765lts.jpg'
-        },
-        {
-            title: '720S SPIDER',
-            initialCount: 5,
-            image: 'images/car/m720ss.jpg'
-        },
-        {
-            title: 'ELVA',
-            initialCount: 1,
-            image: 'images/car/melva.jpg'
-        },
-        {
-            title: '1994 F1',
-            initialCount: 1,
-            image: 'images/car/mf1.jpg'
+    useEffect(() => {   
+        async function getCars(){
+            const response = await fetch('https://my-json-server.typicode.com/Llang8/cars-api/cars')
+            const data = await response.json()
+            setCars(data)
         }
-    ])
+        getCars()
+    }, [])
 
-
-    return (
-        <div className="App">
-            {
-                counters.map((counter) => <Cardetail title={counter.title} initialCount={counter.initialCount} image={counter.image} />)
-            }
+    return(
+        <div>
+            <h1 className="inventoryTitle">Inventory</h1>
+            {cars.map((car) => <Cardetail car={car} key={car.id}/>)}
         </div>
-    );
+    )
 }

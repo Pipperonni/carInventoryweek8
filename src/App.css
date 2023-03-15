@@ -1,5 +1,19 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  background-color: lightgray;
+  opacity: .8;
+  width:25rem;
+  margin: 1rem;
+  padding-left: 1rem;
+  border-radius: 1rem;
+}
+
+.imageCar{
+  width: 300px;
+  height: 200px;
 }
 
 .App-logo {
