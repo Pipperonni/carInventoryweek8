@@ -12,13 +12,13 @@ body {
   color: rgb(229, 18, 53);  
 }
 
-
 .navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5rem;
   background-color: #f3f3f3;
+  
 }
 
 .logos{
@@ -95,6 +95,18 @@ h1{
   font-size: 3rem;
 }
 
+.allCarsBox{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.carImage{
+  width: 25rem;
+  height: 17rem;
+  border-radius: 1rem 1rem 0 0;
+}
+
 .infoBox{
   display: flex;
   justify-content: center;
@@ -110,7 +122,7 @@ h1{
   font-size: 2rem;
   text-decoration: none;
   color: rgb(162, 16, 241);
-  
+  margin: 8px;
 }
 
 .carTitle{

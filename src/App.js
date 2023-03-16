@@ -10,7 +10,7 @@ import CarInfo from './views/CarInfo'
 function App() {
   return(
     <BrowserRouter>
-      <div>
+      <div className="outterNavBar">
         <nav>
           <ul className="navbar">
             <div className="logos">
