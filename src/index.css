@@ -61,8 +61,8 @@ body {
 
 .navTitleBox{
   display: flex;
-  justify-content: space-between;
-  width: 40rem;
+  gap: 3rem;
+  width: 26rem;
   margin-right: 3rem;
 }
 
@@ -77,6 +77,33 @@ body {
   color: rgb(242, 156, 35);
 }
 
+.logBox{
+  margin-right: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-logout{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.userName{
+  font-size: 2rem;
+  line-height: 1rem;
+  color: rgb(131, 71, 187);
+}
+
+.logBtn{
+  width: 6rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: 2px solid rgb(69, 8, 125);
+  background-color: rgb(242, 156, 35);
+  color: rgb(69, 8, 125);
+}
 
 .carInventory{
   display: flex;

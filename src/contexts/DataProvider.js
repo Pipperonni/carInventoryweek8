@@ -1,18 +1,22 @@
 import { useState, useEffect, createContext, useContext } from "react";
-import { getFirestore, getDocs, collection, getDoc, doc } from '@firebase/firestore'
+import { getFirestore, getDocs, collection, getDoc, doc, collectionGroup, query } from '@firebase/firestore'
+import { AuthContext } from "./AuthProvider";
 
 export const DataContext = createContext()
 
 export const DataProvider = function(props){
     const [cars, setCars] = useState([])
+    const { user } = useContext(AuthContext)
     const db = getFirestore()
     useEffect(() => {
         async function getCars(){
-            const querySnapshot = await getDocs(collection(db, 'cars')) 
+            const postQuery = query(collectionGroup(db, 'cars'))
+            const querySnapshot = await getDocs(postQuery) 
             const loadedCars = []
             querySnapshot.forEach((doc) => {
                 loadedCars.push({
                     id: doc.id,
+                    uid: doc.ref.parent.id,
                     ...doc.data()
                 })
             })
@@ -21,7 +25,7 @@ export const DataProvider = function(props){
         getCars()
     }, [])
 
-    async function getCar(id){
+    async function getCar(uid, id){
         const docRef = doc(db, 'cars', id);
         const docSnap = await getDoc(docRef);
 

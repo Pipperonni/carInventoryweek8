@@ -24,7 +24,7 @@ export default function Cars(props){
                 <p className="pInfo">Seats: {props.car.seats}</p>
                 </>
                  :
-                <Link className="moreInfo" to={ `/cars/${props.car.id}` }>More Info</Link>
+                <Link className="moreInfo" to={ `/cars/${props.car.uid}/${props.car.id}` }>More Info</Link>
             }
         </div>
         </div>
